@@ -52,8 +52,14 @@ X=load_iris().data
 plt.scatter(X[:, 2], X[:, 3],c=load_iris().target)
 plt.show()
 # DBSCAN聚类
-db= dbscan(eps=0.9, min_samples=10).fit(X[:,2:3])
-label_pred = db.labels_
+db= dbscan(X[:,2:3],eps=0.9, min_Pts=10)
+label_pred = db
 
 plt.scatter(X[:, 2], X[:, 3],c=label_pred)
+plt.show()
+
+db2= dbscan(X[:,2:3],eps=0.2,min_Pts=4)
+label_pred2 = db2
+
+plt.scatter(X[:, 2], X[:, 3],c=label_pred2)
 plt.show()
