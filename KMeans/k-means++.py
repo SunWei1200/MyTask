@@ -143,7 +143,7 @@ def iter_(data, center, iter):
 # 引入兰德指数评价聚类结果
 def metric(result, pred_result):
     print(metrics.adjusted_rand_score(result, pred_result))
-
+##0.8509627406851713
 
 if __name__ == '__main__':
     # 加载数据集

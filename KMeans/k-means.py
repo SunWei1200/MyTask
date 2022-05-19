@@ -128,7 +128,7 @@ def iter_(data, center, iter):
 def metric(result, pred_result):
     print(metrics.adjusted_rand_score(result, pred_result))
 
-
+##0.9037141640512019
 if __name__ == '__main__':
     # 加载数据集
     datas, results = get_data()

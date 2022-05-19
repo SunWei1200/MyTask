@@ -27,17 +27,17 @@ def dbscan(X,eps,min_Pts):
         j=random.choice(gama)  #随机选择一个点
         gama.remove(j)  #未访问列表中移除
         fil.append(j)   #添加入访问列表
-        NeighborPts=findNeighbor(j,X,eps)
+        NeighborPts=findNeighbor(j,X,eps)  #欧式距离计算，并统计邻域内的点
         if len(NeighborPts) < min_Pts:
             cluster[j]=-1   #标记为噪声点
         else:
             k=k+1
             cluster[j]=k
-            for i in NeighborPts:
+            for i in NeighborPts:#查询邻域内的边界点
                 if i not in fil:
                     gama.remove(i)
                     fil.append(i)
-                    Ner_NeighborPts=findNeighbor(i,X,eps)
+                    Ner_NeighborPts=findNeighbor(i,X,eps)##计算该邻域内边界点的邻域
                     if len(Ner_NeighborPts) >= min_Pts:
                         for a in Ner_NeighborPts:
                             if a not in NeighborPts:
